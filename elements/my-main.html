@@ -87,13 +87,17 @@
     Polymer({
       menuSelected: function(e, detail) {
         if (detail.isSelected) {
-          //console.log(detail.item.label);
+          //console.log(detail);
           switch(detail.item.label) {
+            case "Home":
+              break;
             case "Linkedin":
-              window.location = 'http://l.lwl27.me/lwl27linkedin';
+              ga('send', 'event', 'Menu', 'Click', 'Linkedin');
+              window.location = 'http://sg.linkedin.com/in/limwl27';
               break;
             case "Photo":
-              window.location = 'http://l.lwl27.me/lwl27foto';
+              ga('send', 'event', 'Menu', 'Click', 'Photo');
+              window.location = 'http://photography.lwl27.me';
               break;
           }
         }
