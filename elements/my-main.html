@@ -1,23 +1,19 @@
 <link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
 <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
 <link rel="import" href="../bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../bower_components/core-drawer-panel/core-drawer-panel.html">
+<link rel="import" href="../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../bower_components/core-item/core-item.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="my-card.html">
 
-<polymer-element name="my-homepage">
+<polymer-element name="my-main">
 
   <template>
     <style>    
       :host {
-        position: absolute;
         width: 100%;
         height: 100%;
-        box-sizing: border-box;
-      }
-      core-header-panel {
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
       }
       core-toolbar {
         color: rgb(255, 255, 255);
@@ -32,13 +28,24 @@
       }
     </style>
 
-    <core-header-panel mode="standard">
-      <core-toolbar>
-        <core-icon-button icon="menu"></core-icon-button>
-        <div flex>Wee-Lit Lim</div>
-      </core-toolbar>
+    <core-drawer-panel drawerWidth="200px" responsiveWidth="800px">
+      <core-header-panel drawer>
+        <core-toolbar>
+        </core-toolbar>
+        <section>
+          <core-menu on-core-select="{{menuSelected}}">
+            <core-item label="Linkedin"></core-item>
+            <core-item label="Photo"></core-item>
+          </core-menu>
+        </section>
+      </core-header-panel>
+      <core-header-panel main>
+        <core-toolbar>
+          <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+          <div flex>Wee-Lit Lim</div>
+        </core-toolbar>
 
-      <section layout vertical center>
+        <section layout vertical center>
 
           <my-card>
             <img src="../bower_components/material-design-icons/hardware/svg/production/ic_computer_48px.svg">
@@ -66,14 +73,20 @@
             <p>R.I.P ... pending resurrection ...</p>
           </my-card>
 
-      </section>
+        </section>
 
-    </core-header-panel>
+      </core-header-panel>
+    <core-drawer-panel>
 
   </template>
 
   <script>
     Polymer({
+      menuSelected: function(e, detail) {
+        if (detail.isSelected) {
+          console.log(detail);
+        }
+      }
     });
   </script>
 

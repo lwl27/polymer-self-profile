@@ -22,6 +22,10 @@
     "core-icon-button": "Polymer/core-icon-button#~0.5.5",
     "material-design-icons": "~1.0.1",
     "core-icons": "Polymer/core-icons#~0.5.5",
-    "paper-shadow": "Polymer/paper-shadow#~0.5.5"
+    "paper-shadow": "Polymer/paper-shadow#~0.5.5",
+    "core-drawer-panel": "Polymer/core-drawer-panel#~0.5.5",
+    "paper-item": "Polymer/paper-item#~0.5.5",
+    "core-menu": "Polymer/core-menu#~0.5.5",
+    "core-item": "Polymer/core-item#~0.5.5"
   }
 }
