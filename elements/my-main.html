@@ -4,6 +4,8 @@
 <link rel="import" href="../bower_components/core-drawer-panel/core-drawer-panel.html">
 <link rel="import" href="../bower_components/core-menu/core-menu.html">
 <link rel="import" href="../bower_components/core-item/core-item.html">
+<link rel="import" href="../bower_components/core-icons/image-icons.html">
+<link rel="import" href="../bower_components/core-icons/social-icons.html">
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="my-card.html">
 
@@ -33,9 +35,10 @@
         <core-toolbar>
         </core-toolbar>
         <section>
-          <core-menu on-core-select="{{menuSelected}}">
-            <core-item label="Linkedin"></core-item>
-            <core-item label="Photo"></core-item>
+          <core-menu selected="0" on-core-select="{{menuSelected}}">
+            <core-item icon="home" label="Home"></core-item>
+            <core-item icon="social:person" label="Linkedin"></core-item>
+            <core-item icon="image:camera" label="Photo"></core-item>
           </core-menu>
         </section>
       </core-header-panel>
@@ -84,7 +87,15 @@
     Polymer({
       menuSelected: function(e, detail) {
         if (detail.isSelected) {
-          console.log(detail);
+          //console.log(detail.item.label);
+          switch(detail.item.label) {
+            case "Linkedin":
+              window.location = 'http://l.lwl27.me/lwl27linkedin';
+              break;
+            case "Photo":
+              window.location = 'http://l.lwl27.me/lwl27foto';
+              break;
+          }
         }
       }
     });

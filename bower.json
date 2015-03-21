@@ -26,6 +26,8 @@
     "core-drawer-panel": "Polymer/core-drawer-panel#~0.5.5",
     "paper-item": "Polymer/paper-item#~0.5.5",
     "core-menu": "Polymer/core-menu#~0.5.5",
-    "core-item": "Polymer/core-item#~0.5.5"
+    "core-item": "Polymer/core-item#~0.5.5",
+    "core-iconset": "Polymer/core-iconset#~0.5.5",
+    "core-iconset-svg": "Polymer/core-iconset-svg#~0.5.5"
   }
 }
